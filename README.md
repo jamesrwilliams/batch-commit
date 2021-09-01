@@ -16,7 +16,7 @@ $ npm install -g git-via-node
 $ git-via-node COMMAND
 running command...
 $ git-via-node (-v|--version|version)
-git-via-node/0.1.0 darwin-x64 node-v16.4.2
+git-via-node/0.2.0 darwin-x64 node-v16.4.2
 $ git-via-node --help [COMMAND]
 USAGE
   $ git-via-node COMMAND
@@ -25,27 +25,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`git-via-node hello`](#git-via-node-hello)
 * [`git-via-node help [COMMAND]`](#git-via-node-help-command)
 * [`git-via-node run`](#git-via-node-run)
-
-## `git-via-node hello`
-
-Describe the command here
-
-```
-USAGE
-  $ git-via-node hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src/commands/hello.js](https://github.com/jamesrwilliams/git-via-node/blob/v0.1.0/src/commands/hello.js)_
 
 ## `git-via-node help [COMMAND]`
 
@@ -83,5 +64,5 @@ DESCRIPTION
   Extra documentation goes here
 ```
 
-_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v0.1.0/src/commands/run.js)_
+_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v0.2.0/src/commands/run.js)_
 <!-- commandsstop -->
