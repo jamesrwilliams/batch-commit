@@ -16,7 +16,7 @@ $ npm install -g git-via-node
 $ git-via-node COMMAND
 running command...
 $ git-via-node (-v|--version|version)
-git-via-node/0.2.0 darwin-x64 node-v16.4.2
+git-via-node/0.3.0 darwin-x64 node-v16.4.2
 $ git-via-node --help [COMMAND]
 USAGE
   $ git-via-node COMMAND
@@ -47,7 +47,7 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3
 
 ## `git-via-node run`
 
-Describe the command here
+Our main entrypoint to adding auto-commits and tags
 
 ```
 USAGE
@@ -61,10 +61,9 @@ OPTIONS
 
 DESCRIPTION
   ...
-  Extra documentation goes here
 ```
 
-_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v0.2.0/src/commands/run.js)_
+_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v0.3.0/src/commands/run.js)_
 <!-- commandsstop -->
 
 ## Built with
