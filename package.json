@@ -1,0 +1,57 @@
+{
+  "name": "git-via-node",
+  "description": "An experiment in interacting with git via node",
+  "version": "0.0.0",
+  "author": "James Williams @jamesrwilliams",
+  "bin": {
+    "git-via-node": "./bin/run"
+  },
+  "bugs": "https://github.com/jamesrwilliams/git-via-node/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^3",
+    "simple-git": "^2.45.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/test": "^1",
+    "chai": "^4",
+    "eslint": "^5.13",
+    "eslint-config-oclif": "^3.1",
+    "globby": "^10",
+    "mocha": "^5",
+    "mock-fs": "^5.0.0",
+    "nyc": "^14"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/jamesrwilliams/git-via-node",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "git-via-node",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "jamesrwilliams/git-via-node",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint .",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
