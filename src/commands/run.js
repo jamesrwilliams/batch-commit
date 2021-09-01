@@ -1,4 +1,5 @@
 const {Command, flags} = require('@oclif/command')
+const  inquirer = require('inquirer')
 const {parseConfigFile} = require('../lib/parse-file')
 const {dvcs} = require('../lib/dvcs')
 
@@ -13,20 +14,36 @@ class RunCommand extends Command {
 
     if (configFilePath) {
       const values = parseConfigFile(configFilePath)
+
+      if (values.length === 0) {
+        this.log('Error - Empty config file provided')
+        return
+      }
+
+      let responses = await inquirer.prompt([{
+        name: 'confirmed',
+        message: `Adding ${values.length} commits & tags to this repo. Confirm?`,
+        type: 'confirm',
+      }])
+
+      const {confirmed} = responses
+
+      if (!confirmed) return
+
       for (const value of values) {
+        // eslint-disable-next-line no-await-in-loop
         await dvcs(value, commitMsg)
         this.log(`Commit and tag crated for ${value}`)
       }
-      this.log('Complete?')
+      this.log('Completed')
     } else {
       this.log(`Creating empty commit for ${brand} with a tag: "${prefix}${brand}"`)
     }
   }
 }
 
-RunCommand.description = `Describe the command here
+RunCommand.description = `Our main entrypoint to adding auto-commits and tags
 ...
-Extra documentation goes here
 `
 
 RunCommand.flags = {

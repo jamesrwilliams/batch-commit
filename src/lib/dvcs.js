@@ -1,4 +1,5 @@
 const simpleGit = require('simple-git')
+
 const git = simpleGit()
 
 /**
@@ -8,13 +9,12 @@ const git = simpleGit()
  * @returns {Promise<unknown>} The status of this VCS action
  */
 module.exports.dvcs = async (brand, message) => {
-
   const commitMessage = `${message} --prefix=${brand}`
   const tagName = `${message}_${brand}`
   const tagMessage = `--prefix=${brand}`
 
   const status = await git.status()
-  // await later(2000)
+  await later(1000) // Artificial delay
   const commit = await git.commit(commitMessage, {'--allow-empty': null})
   const tag = await git.addAnnotatedTag(tagName, tagMessage)
 
@@ -23,7 +23,11 @@ module.exports.dvcs = async (brand, message) => {
 }
 
 function later(delay) {
-  return new Promise(function(resolve) {
+  return new Promise(function (resolve) {
     setTimeout(resolve, delay)
   })
+}
+
+module.exports.test = async () => {
+  return git.status()
 }

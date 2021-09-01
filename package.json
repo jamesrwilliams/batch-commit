@@ -11,6 +11,7 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
+    "inquirer": "^8.1.2",
     "simple-git": "^2.45.0"
   },
   "devDependencies": {
@@ -22,7 +23,8 @@
     "globby": "^10",
     "mocha": "^5",
     "mock-fs": "^5.0.0",
-    "nyc": "^14"
+    "nyc": "^14",
+    "sinon": "^11.1.2"
   },
   "engines": {
     "node": ">=8.0.0"

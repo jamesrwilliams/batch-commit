@@ -7,5 +7,9 @@ const {readFileSync} = require('fs')
  */
 module.exports.parseConfigFile = filePath => {
   const configFile = readFileSync(filePath).toString('utf-8')
-  return configFile.split('\n').map(line => line.trim())
+  const filtered = configFile.split('\n').map(line => {
+    const trimmed = line.trim()
+    return (trimmed ? trimmed : null)
+  })
+  return filtered.filter(x => Boolean(x))
 }

@@ -66,3 +66,8 @@ DESCRIPTION
 
 _See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v0.2.0/src/commands/run.js)_
 <!-- commandsstop -->
+
+## Built with
+
+- [steveukx/git-js](https://github.com/steveukx/git-js)
+- [oclif/oclif](https://github.com/oclif/oclif)
