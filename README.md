@@ -27,6 +27,7 @@ USAGE
 <!-- commands -->
 * [`git-via-node hello`](#git-via-node-hello)
 * [`git-via-node help [COMMAND]`](#git-via-node-help-command)
+* [`git-via-node run`](#git-via-node-run)
 
 ## `git-via-node hello`
 
@@ -62,4 +63,25 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3/src/commands/help.ts)_
+
+## `git-via-node run`
+
+Describe the command here
+
+```
+USAGE
+  $ git-via-node run
+
+OPTIONS
+  -b, --brand=brand                    The commit message argument to pass to each commit
+  -c, --config-file=config-file        Path to a txt file with a linebreak seperated list of brands
+  -m, --commit-message=commit-message  The commit message prefix (used for all commits when used with --config-file)
+  -p, --prefix=prefix                  Prefix used on the git tag name
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v0.0.0/src/commands/run.js)_
 <!-- commandsstop -->
