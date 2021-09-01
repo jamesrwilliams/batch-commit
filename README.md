@@ -16,7 +16,7 @@ $ npm install -g git-via-node
 $ git-via-node COMMAND
 running command...
 $ git-via-node (-v|--version|version)
-git-via-node/0.3.0 darwin-x64 node-v16.4.2
+git-via-node/1.0.0 darwin-x64 node-v16.4.2
 $ git-via-node --help [COMMAND]
 USAGE
   $ git-via-node COMMAND
@@ -54,16 +54,23 @@ USAGE
   $ git-via-node run
 
 OPTIONS
-  -b, --brand=brand                    The commit message argument to pass to each commit
-  -c, --config-file=config-file        Path to a txt file with a linebreak seperated list of brands
-  -m, --commit-message=commit-message  The commit message prefix (used for all commits when used with --config-file)
-  -p, --prefix=prefix                  Prefix used on the git tag name
+  -c, --file=file                      Path to a txt file with a linebreak seperated list of values to be used with the
+                                       --flag-key argument
+
+  -f, --key=key                        (required) The flag we're adding to each commit
+
+  -m, --commit-message=commit-message  (required) The commit message prefix (used for all commits when used with
+                                       --config-file)
+
+  -v, --value=value                    The commit message argument to pass to each commit
+
+  --tag                                Create a tag with this commit also
 
 DESCRIPTION
   ...
 ```
 
-_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v0.3.0/src/commands/run.js)_
+_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v1.0.0/src/commands/run.js)_
 <!-- commandsstop -->
 
 ## Built with

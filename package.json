@@ -1,7 +1,7 @@
 {
   "name": "git-via-node",
   "description": "An experiment in interacting with git via node",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "author": "James Williams @jamesrwilliams",
   "bin": {
     "git-via-node": "./bin/run"
