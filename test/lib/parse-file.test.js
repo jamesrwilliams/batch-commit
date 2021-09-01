@@ -1,6 +1,6 @@
 const {parseConfigFile} = require('../../src/lib/parse-file')
 const mock = require('mock-fs')
-var expect = require('chai').expect
+const expect = require('chai').expect
 
 describe('#parse-file', () => {
   it('should handle an normal file', () => {

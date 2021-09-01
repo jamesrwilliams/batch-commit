@@ -4,22 +4,20 @@ const git = simpleGit()
 
 /**
  * Lets interact with Git - via node!
- * @param {string} brand The brand we're using in the commit message
- * @param {string} message The tag name we're using
+ * @param {string} commitMessage The commit message used for all the commits
+ * @param {string} tagName The tag name passed to git
+ * @param {string} tagMessage The tag message for creating a git tag
+ * @param {string} tagEnabled If we are tagging commits also
  * @returns {Promise<unknown>} The status of this VCS action
  */
-module.exports.dvcs = async (brand, message) => {
-  const commitMessage = `${message} --prefix=${brand}`
-  const tagName = `${message}_${brand}`
-  const tagMessage = `--prefix=${brand}`
-
-  const status = await git.status()
+module.exports.dvcs = async (commitMessage, tagName, tagMessage, tagEnabled) => {
+  await git.status()
   await later(1000) // Artificial delay
-  const commit = await git.commit(commitMessage, {'--allow-empty': null})
-  const tag = await git.addAnnotatedTag(tagName, tagMessage)
+  await git.commit(commitMessage, {'--allow-empty': null})
 
-  // Create empty commit
-  return {status, commit, tag}
+  if (tagEnabled) {
+    await git.addAnnotatedTag(tagName, tagMessage)
+  }
 }
 
 function later(delay) {
@@ -30,4 +28,9 @@ function later(delay) {
 
 module.exports.test = async () => {
   return git.status()
+}
+
+module.exports.currentRepo = async () => {
+  const remoteURL = await git.listRemote(['--get-url'])
+  return remoteURL.split(':')[1].split('.git')[0]
 }
