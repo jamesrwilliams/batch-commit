@@ -16,7 +16,7 @@ An experiment in interacting with git via node by adding bulk commits via a node
 - Install dependencies
 - Run `npm link` to make `batch-commit` available in other directories
 
-# Usage
+## Usage
 <!-- usage -->
 ```sh-session
 $ npm install -g batch-commit
@@ -30,12 +30,12 @@ USAGE
 ...
 ```
 <!-- usagestop -->
-# Commands
+## Commands
 <!-- commands -->
 * [`batch-commit help [COMMAND]`](#batch-commit-help-command)
 * [`batch-commit run`](#batch-commit-run)
 
-## `batch-commit help [COMMAND]`
+### `batch-commit help [COMMAND]`
 
 display help for batch-commit
 
@@ -52,7 +52,7 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3/src/commands/help.ts)_
 
-## `batch-commit run`
+### `batch-commit run`
 
 Batch create empty commits and tags to trigger CI activities
 
