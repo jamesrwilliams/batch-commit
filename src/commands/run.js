@@ -14,6 +14,7 @@ class RunCommand extends Command {
       key: flagKey,
       value: flagValue,
       tag: tagEnabled,
+      push: pushEnabled,
       'commit-message': commitMessage,
     } = flags
 
@@ -55,6 +56,7 @@ class RunCommand extends Command {
     const plural = flagValues.length === 1 ? '' : 's'
     const tagLine = tagEnabled ? ` & tag${plural}` : ''
     const repoNameMsg = currentRepoName ? ` to "${currentRepoName}"` : ''
+    const pushMessage = pushEnabled ? ` and ${chalk.redBright('will push to "origin"')}` : ', but will not push'
 
     this.log('\nSummary of activity:\n')
 
@@ -65,7 +67,7 @@ class RunCommand extends Command {
     let responses = await inquirer.prompt([
       {
         name: 'confirmed',
-        message: `About to add ${flagValues.length} commit${plural}${tagLine}${repoNameMsg}, but will not push. Proceed?`,
+        message: `About to add ${flagValues.length} commit${plural}${tagLine}${repoNameMsg}${pushMessage}. Proceed?`,
         type: 'confirm',
       },
     ])
@@ -78,7 +80,10 @@ class RunCommand extends Command {
 
     for (const action of actionList) {
       // eslint-disable-next-line no-await-in-loop
-      const commitHash = await dvcs(action.message, action.tagName, action.tagMessage, tagEnabled)
+      const commitHash = await dvcs(action.message, action.tagName, action.tagMessage, {
+        tagEnabled,
+        pushEnabled,
+      })
       this.log(`Commit${tagEnabled ? ' and tag ' : ' '}added for "${chalk.white(action.key)}" with hash: ${chalk.white(commitHash)}`)
     }
 
@@ -129,7 +134,11 @@ RunCommand.flags = {
     required: true,
     description: 'The commit message prefix (used for all commits when used with --file)',
   }),
-
+  push: flags.boolean({
+    char: 'p',
+    default: false,
+    description: 'Push to the remote after each commit',
+  }),
 }
 
 module.exports = RunCommand
