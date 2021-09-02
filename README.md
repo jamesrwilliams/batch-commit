@@ -6,8 +6,7 @@ An experiment in interacting with git via node by adding bulk commits via a node
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
 <!-- tocstop -->
 
 ## Setup
@@ -23,7 +22,7 @@ $ npm install -g batch-commit
 $ batch-commit COMMAND
 running command...
 $ batch-commit (-v|--version|version)
-batch-commit/2.0.0 darwin-x64 node-v16.4.2
+batch-commit/2.1.0 darwin-x64 node-v16.4.2
 $ batch-commit --help [COMMAND]
 USAGE
   $ batch-commit COMMAND
@@ -35,7 +34,7 @@ USAGE
 * [`batch-commit help [COMMAND]`](#batch-commit-help-command)
 * [`batch-commit run`](#batch-commit-run)
 
-### `batch-commit help [COMMAND]`
+## `batch-commit help [COMMAND]`
 
 display help for batch-commit
 
@@ -52,7 +51,7 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3/src/commands/help.ts)_
 
-### `batch-commit run`
+## `batch-commit run`
 
 Batch create empty commits and tags to trigger CI activities
 
@@ -72,11 +71,18 @@ OPTIONS
 
   --tag                                Create tags along with commits
 
-DESCRIPTION
-  ...
+EXAMPLES
+  $ batch-commit run --key="foo" --value="var" --commit-message="Example Commit"
+  - Adds a single empty commit on the current branch with a commit message: "Example commit --foo=bar"
+  
+  $ batch-commit run --key="foo" --file="./text.txt" --commit-message="Example Commit"
+  - Adds multiple commits using values using each line of "./text.txt" file: "Example commit --foo={line from file}"
+  
+  $ batch-commit run --key="foo" --value="bar" --commit-message="Example Commit" --tag
+  - The --tag option will create a tag for the commit also
 ```
 
-_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v2.0.0/src/commands/run.js)_
+_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v2.1.0/src/commands/run.js)_
 <!-- commandsstop -->
 
 ## Built with
