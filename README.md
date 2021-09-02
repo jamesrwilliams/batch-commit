@@ -22,7 +22,7 @@ $ npm install -g batch-commit
 $ batch-commit COMMAND
 running command...
 $ batch-commit (-v|--version|version)
-batch-commit/2.1.0 darwin-x64 node-v16.4.2
+batch-commit/2.2.0 darwin-x64 node-v16.4.2
 $ batch-commit --help [COMMAND]
 USAGE
   $ batch-commit COMMAND
@@ -67,6 +67,8 @@ OPTIONS
 
   -m, --commit-message=commit-message  (required) The commit message prefix (used for all commits when used with --file)
 
+  -p, --push                           Push to the remote after each commit
+
   -v, --value=value                    The value passed to the key
 
   --tag                                Create tags along with commits
@@ -82,7 +84,7 @@ EXAMPLES
   - The --tag option will create a tag for the commit also
 ```
 
-_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v2.1.0/src/commands/run.js)_
+_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v2.2.0/src/commands/run.js)_
 <!-- commandsstop -->
 
 ## Built with
