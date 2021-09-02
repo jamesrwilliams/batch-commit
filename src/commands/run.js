@@ -4,6 +4,7 @@ const {parseConfigFile} = require('../lib/parse-file')
 const {dvcs, currentRepo} = require('../lib/dvcs')
 const {cli} = require('cli-ux')
 const {createActionList} = require('../lib/create-action-list')
+const chalk = require('chalk')
 
 class RunCommand extends Command {
   async run() {
@@ -78,7 +79,7 @@ class RunCommand extends Command {
     for (const action of actionList) {
       // eslint-disable-next-line no-await-in-loop
       const commitHash = await dvcs(action.message, action.tagName, action.tagMessage, tagEnabled)
-      this.log(`Commit${tagEnabled ? ' and tag ' : ' '}added for "${action.key}" with hash: ${commitHash}`)
+      this.log(`Commit${tagEnabled ? ' and tag ' : ' '}added for "${chalk.white(action.key)}" with hash: ${chalk.white(commitHash)}`)
     }
 
     this.log('\nAll done!\n')
