@@ -86,9 +86,19 @@ class RunCommand extends Command {
   }
 }
 
-RunCommand.description = `Batch create empty commits and tags to trigger CI activities
-...
-`
+RunCommand.description = 'Batch create empty commits and tags to trigger CI activities'
+
+RunCommand.examples = [
+  `$ batch-commit run --key="foo" --value="var" --commit-message="Example Commit"
+- Adds a single empty commit on the current branch with a commit message: "Example commit --foo=bar"
+  `,
+  `$ batch-commit run --key="foo" --file="./text.txt" --commit-message="Example Commit"
+- Adds multiple commits using values using each line of "./text.txt" file: "Example commit --foo={line from file}"
+  `,
+  `$ batch-commit run --key="foo" --value="bar" --commit-message="Example Commit" --tag
+- The --tag option will create a tag for the commit also
+  `,
+]
 
 RunCommand.flags = {
   file: flags.string({
