@@ -1,7 +1,7 @@
 {
   "name": "batch-commit",
   "description": "An experiment in interacting with git via node",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "author": "James Williams @jamesrwilliams",
   "bin": {
     "batch-commit": "./bin/run"

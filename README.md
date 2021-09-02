@@ -6,7 +6,6 @@ An experiment in interacting with git via node by adding bulk commits via a node
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 
 <!-- toc -->
-* [Setup](#setup)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -20,29 +19,29 @@ An experiment in interacting with git via node by adding bulk commits via a node
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g git-via-node
-$ git-via-node COMMAND
+$ npm install -g batch-commit
+$ batch-commit COMMAND
 running command...
-$ git-via-node (-v|--version|version)
-git-via-node/1.1.0 darwin-x64 node-v16.4.2
-$ git-via-node --help [COMMAND]
+$ batch-commit (-v|--version|version)
+batch-commit/2.0.0 darwin-x64 node-v16.4.2
+$ batch-commit --help [COMMAND]
 USAGE
-  $ git-via-node COMMAND
+  $ batch-commit COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`git-via-node help [COMMAND]`](#git-via-node-help-command)
-* [`git-via-node run`](#git-via-node-run)
+* [`batch-commit help [COMMAND]`](#batch-commit-help-command)
+* [`batch-commit run`](#batch-commit-run)
 
-## `git-via-node help [COMMAND]`
+## `batch-commit help [COMMAND]`
 
-display help for git-via-node
+display help for batch-commit
 
 ```
 USAGE
-  $ git-via-node help [COMMAND]
+  $ batch-commit help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -53,13 +52,13 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3/src/commands/help.ts)_
 
-## `git-via-node run`
+## `batch-commit run`
 
 Batch create empty commits and tags to trigger CI activities
 
 ```
 USAGE
-  $ git-via-node run
+  $ batch-commit run
 
 OPTIONS
   -c, --file=file                      Path to a txt file with a new-line seperated list of values to be used as the
@@ -77,7 +76,7 @@ DESCRIPTION
   ...
 ```
 
-_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v1.1.0/src/commands/run.js)_
+_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v2.0.0/src/commands/run.js)_
 <!-- commandsstop -->
 
 ## Built with
