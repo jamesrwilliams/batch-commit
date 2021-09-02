@@ -16,7 +16,7 @@ $ npm install -g git-via-node
 $ git-via-node COMMAND
 running command...
 $ git-via-node (-v|--version|version)
-git-via-node/1.0.0 darwin-x64 node-v16.4.2
+git-via-node/1.1.0 darwin-x64 node-v16.4.2
 $ git-via-node --help [COMMAND]
 USAGE
   $ git-via-node COMMAND
@@ -47,30 +47,29 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3
 
 ## `git-via-node run`
 
-Our main entrypoint to adding auto-commits and tags
+Batch create empty commits and tags to trigger CI activities
 
 ```
 USAGE
   $ git-via-node run
 
 OPTIONS
-  -c, --file=file                      Path to a txt file with a linebreak seperated list of values to be used with the
-                                       --flag-key argument
+  -c, --file=file                      Path to a txt file with a new-line seperated list of values to be used as the
+                                       --value
 
-  -f, --key=key                        (required) The flag we're adding to each commit
+  -f, --key=key                        (required) The flag name to add to the commits
 
-  -m, --commit-message=commit-message  (required) The commit message prefix (used for all commits when used with
-                                       --config-file)
+  -m, --commit-message=commit-message  (required) The commit message prefix (used for all commits when used with --file)
 
-  -v, --value=value                    The commit message argument to pass to each commit
+  -v, --value=value                    The value passed to the key
 
-  --tag                                Create a tag with this commit also
+  --tag                                Create tags along with commits
 
 DESCRIPTION
   ...
 ```
 
-_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v1.0.0/src/commands/run.js)_
+_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v1.1.0/src/commands/run.js)_
 <!-- commandsstop -->
 
 ## Built with
