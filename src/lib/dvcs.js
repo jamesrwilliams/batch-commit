@@ -13,11 +13,14 @@ const git = simpleGit()
 module.exports.dvcs = async (commitMessage, tagName, tagMessage, tagEnabled) => {
   await git.status()
   await later(1000) // Artificial delay
-  await git.commit(commitMessage, {'--allow-empty': null})
+  const commit = await git.commit(commitMessage, {'--allow-empty': null})
+  const commitHash = await git.revparse(commit.commit)
 
   if (tagEnabled) {
     await git.addAnnotatedTag(tagName, tagMessage)
   }
+
+  return commitHash
 }
 
 function later(delay) {
@@ -31,6 +34,7 @@ module.exports.test = async () => {
 }
 
 module.exports.currentRepo = async () => {
-  const remoteURL = await git.listRemote(['--get-url'])
-  return remoteURL.split(':')[1].split('.git')[0]
+  return git.listRemote(['--get-url']).then(remoteURL => {
+    return remoteURL.split(':')[1].split('.git')[0]
+  })
 }

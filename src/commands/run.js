@@ -18,7 +18,7 @@ class RunCommand extends Command {
 
     let flagValues = []
 
-    const currentRepoName = await currentRepo()
+    const currentRepoName = await currentRepo().catch(() => '')
 
     if (configFilePath) {
       flagValues = parseConfigFile(configFilePath)
@@ -51,20 +51,25 @@ class RunCommand extends Command {
       columns.tagMessage = {header: 'Tag Message'}
     }
 
+    const plural = flagValues.length === 1 ? '' : 's'
+    const tagLine = tagEnabled ? ` & tag${plural}` : ''
+    const repoNameMsg = currentRepoName ? ` to "${currentRepoName}"` : ''
+
+    this.log('\nSummary of activity:\n')
+
     cli.table(actionList, columns)
 
-    this.log('\n')
-
-    const plural = flagValues.length === 1 ? '' : 's'
-    const tagLine = tagEnabled ? `& tag${plural}` : ''
+    this.log('')
 
     let responses = await inquirer.prompt([
       {
         name: 'confirmed',
-        message: `About to add ${flagValues.length} commit${plural} ${tagLine}to "${currentRepoName}", but will not push. Proceed?`,
+        message: `About to add ${flagValues.length} commit${plural}${tagLine}${repoNameMsg}, but will not push. Proceed?`,
         type: 'confirm',
       },
     ])
+
+    this.log('')
 
     const {confirmed} = responses
 
@@ -72,11 +77,11 @@ class RunCommand extends Command {
 
     for (const action of actionList) {
       // eslint-disable-next-line no-await-in-loop
-      await dvcs(action.message, action.tagName, action.tagMessage, tagEnabled)
-      this.log(`Commit${tagEnabled ? ' and tag ' : ' '}added for "${action.key}"`)
+      const commitHash = await dvcs(action.message, action.tagName, action.tagMessage, tagEnabled)
+      this.log(`Commit${tagEnabled ? ' and tag ' : ' '}added for "${action.key}" with hash: ${commitHash}`)
     }
 
-    this.log('\nDone!')
+    this.log('\nAll done!\n')
   }
 }
 
