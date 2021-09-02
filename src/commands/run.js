@@ -80,7 +80,7 @@ class RunCommand extends Command {
   }
 }
 
-RunCommand.description = `Our main entrypoint to adding auto-commits and tags
+RunCommand.description = `Batch create empty commits and tags to trigger CI activities
 ...
 `
 
@@ -89,29 +89,29 @@ RunCommand.flags = {
     char: 'c',
     multiple: false,
     exclusive: ['flag-value'],
-    description: 'Path to a txt file with a linebreak seperated list of values to be used with the --flag-key argument',
+    description: 'Path to a txt file with a new-line seperated list of values to be used as the --value',
   }),
   key: flags.string({
     char: 'f',
     multiple: false,
     required: true,
-    description: "The flag we're adding to each commit",
+    description: 'The flag name to add to the commits',
   }),
   value: flags.string({
     char: 'v',
     multiple: false,
-    description: 'The commit message argument to pass to each commit',
+    description: 'The value passed to the key',
     exclusive: ['config-file'],
   }),
   tag: flags.boolean({
-    description: 'Create a tag with this commit also',
+    description: 'Create tags along with commits',
     default: false,
   }),
   'commit-message': flags.string({
     char: 'm',
     multiple: false,
     required: true,
-    description: 'The commit message prefix (used for all commits when used with --config-file)',
+    description: 'The commit message prefix (used for all commits when used with --file)',
   }),
 
 }
