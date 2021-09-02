@@ -1,14 +1,22 @@
-git-via-node
+batch-commit
 ============
 
-An experiment in interacting with git via node
+An experiment in interacting with git via node by adding bulk commits via a node CLI.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 
 <!-- toc -->
+* [Setup](#setup)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
+## Setup
+
+- Download repository
+- Install dependencies
+- Run `npm link` to make `batch-commit` available in other directories
+
 # Usage
 <!-- usage -->
 ```sh-session

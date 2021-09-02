@@ -1,10 +1,10 @@
 {
-  "name": "git-via-node",
+  "name": "batch-commit",
   "description": "An experiment in interacting with git via node",
   "version": "1.1.0",
   "author": "James Williams @jamesrwilliams",
   "bin": {
-    "git-via-node": "./bin/run"
+    "batch-commit": "./bin/run"
   },
   "bugs": "https://github.com/jamesrwilliams/git-via-node/issues",
   "dependencies": {
@@ -44,7 +44,7 @@
   "main": "src/index.js",
   "oclif": {
     "commands": "./src/commands",
-    "bin": "git-via-node",
+    "bin": "batch-commit",
     "plugins": [
       "@oclif/plugin-help"
     ]
