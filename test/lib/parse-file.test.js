@@ -17,6 +17,20 @@ describe('#parse-file', () => {
     mock.restore()
   })
 
+  it('should trim whitespace correctly from entries', () => {
+    mock({
+      './test/dir/': {
+        'whitespace.txt': 'foo   \n\n  bar  ',
+      },
+    })
+
+    const results = parseConfigFile('./test/dir/whitespace.txt')
+
+    expect(results).to.have.lengthOf(2)
+
+    mock.restore()
+  })
+
   it('should handle an empty file', () => {
     mock({
       './test/dir/': {
