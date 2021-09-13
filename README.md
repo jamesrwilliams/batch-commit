@@ -1,5 +1,4 @@
-batch-commit
-============
+# batch-commit
 
 Automate commits to a repository with batch commits and tagging.
 
