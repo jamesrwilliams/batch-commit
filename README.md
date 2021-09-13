@@ -2,8 +2,10 @@
 
 Automate commits to a repository with batch commits and tagging.
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io) [![Project 
-Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1261f9890f7e492485601fbf4356b252)](https://www.codacy.com/gh/jamesrwilliams/batch-commit/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jamesrwilliams/batch-commit&amp;utm_campaign=Badge_Grade)
+[![Test](https://github.com/jamesrwilliams/batch-commit/actions/workflows/test.yml/badge.svg)](https://github.com/jamesrwilliams/batch-commit/actions/workflows/test.yml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1261f9890f7e492485601fbf4356b252)](https://www.codacy.com/gh/jamesrwilliams/batch-commit/dashboard)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 
 <!-- toc -->
 
