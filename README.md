@@ -1,19 +1,26 @@
 batch-commit
 ============
 
-An experiment in interacting with git via node by adding bulk commits via a node CLI.
+Automate commits to a repository with batch commits and tagging.
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io) [![Project 
+Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1261f9890f7e492485601fbf4356b252)](https://www.codacy.com/gh/jamesrwilliams/batch-commit/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jamesrwilliams/batch-commit&amp;utm_campaign=Badge_Grade)
 
 <!-- toc -->
 
 <!-- tocstop -->
 
-## Setup
+## Installation
 
-- Download repository
-- Install dependencies
-- Run `npm link` to make `batch-commit` available in other directories
+```shell
+npm i -g batch-commit
+```
+
+## Development Setup  
+
+1. Clone repository:
+2. Install dependencies: `yarn install`
+3. Run `npm link` to make `batch-commit` available in other directories
 
 ## Usage
 <!-- usage -->
