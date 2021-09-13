@@ -18,7 +18,7 @@ npm i -g batch-commit
 ## Development Setup  
 
 1. Clone repository:
-2. Install dependencies: `yarn install`
+2. Install dependencies: `npm install`
 3. Run `npm link` to make `batch-commit` available in other directories
 
 ## Usage
