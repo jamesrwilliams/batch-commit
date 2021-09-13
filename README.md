@@ -8,7 +8,7 @@ Automate commits to a repository with batch commits and tagging.
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 
 <!-- toc -->
-
+* [batch-commit](#batch-commit)
 <!-- tocstop -->
 
 ## Installation
@@ -30,7 +30,7 @@ $ npm install -g batch-commit
 $ batch-commit COMMAND
 running command...
 $ batch-commit (-v|--version|version)
-batch-commit/2.2.0 darwin-x64 node-v16.4.2
+batch-commit/2.2.1 darwin-x64 node-v16.4.2
 $ batch-commit --help [COMMAND]
 USAGE
   $ batch-commit COMMAND
@@ -92,7 +92,7 @@ EXAMPLES
   - The --tag option will create a tag for the commit also
 ```
 
-_See code: [src/commands/run.js](https://github.com/jamesrwilliams/batch-commit/blob/v2.2.0/src/commands/run.js)_
+_See code: [src/commands/run.js](https://github.com/jamesrwilliams/batch-commit/blob/v2.2.1/src/commands/run.js)_
 <!-- commandsstop -->
 
 ## Built with
