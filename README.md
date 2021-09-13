@@ -84,7 +84,7 @@ EXAMPLES
   - The --tag option will create a tag for the commit also
 ```
 
-_See code: [src/commands/run.js](https://github.com/jamesrwilliams/git-via-node/blob/v2.2.0/src/commands/run.js)_
+_See code: [src/commands/run.js](https://github.com/jamesrwilliams/batch-commit/blob/v2.2.0/src/commands/run.js)_
 <!-- commandsstop -->
 
 ## Built with
